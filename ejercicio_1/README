@@ -1,0 +1,90 @@
+Zophia Data Academy
+Fundamentos de ingeniería de datos
+
+Ecommerce Ejercicio 1
+
+Crear tabla detalle_cliente_direccion con las siguientes columnas
+
+ |-- cliente_id: string
+ |-- cliente: string
+ |-- email: string
+ |-- telefono: string
+ |-- metodo_pago: string
+ |-- numero_tarjeta: string
+ |-- codigo_postal: string
+ |-- estado: string
+ |-- direccion: string
+
+
+Crear tabla detalle_sucursal_estado con las siguientes columnas
+
+ |-- sucursal_id: string
+ |-- sucursal: string
+ |-- direccion: string
+ |-- telefono: string
+ |-- estado: string
+
+
+Ejemplo de las tablas de salida en:
+ output/detalle_cliente_direccion.csv
+ output/detalle_sucursal_estado.csv
+
+Descripción
+ Las tablas de la bases de datos no se encuentran del todo limpia, y al
+ realizar consultas existen respuestas con caracteres extraños ya que los
+ equipos de donde se realizan estas consultas manejan distintos encodings,
+ por lo que se busca limpiar los datos de las tablas para tener información 
+ más clara al hacer consultas.
+ 
+ En la tabla detalle_cliente, de la columna direccion separa el estado y el
+ código postal y conviertelas en dos columnas adicionales tituladas: estado
+ y codigo_postal. El contenido restante dejalo dentro de la columna direccion.
+ 
+ En la tabla detalle_sucursal, de la columna sucursal obtén el estado que
+ corresponde a la cadena de 3 o más letras previas al “-” y crea una columna
+ llamada estado.
+ 
+Archivos fuente
+ detalle_categoria.csv
+ detalle_cliente.csv
+ detalle_productos.csv
+ detalle_sucursal.csv
+ ordenes.csv
+ productos.csv
+ hechos.csv
+ detalle_categoria.parquet
+ detalle_productos.parquet
+ ordenes.parquet
+ productos.parquet
+ hechos.parquet
+ detalle_cliente.parquet
+ detalle_sucursal.parquet
+ 
+Procedimiento
+ "source_to_stage"
+ Tomar cada archivo fuente(csv) y enviarlo a la capa stage(parquet)
+ Para el archivo hecos.csv, quitar los espacios en blanco en el nombre
+ de la columna categoria y enviarlo a la capa stage(parquet)
+ 
+ "transformation_accents_linebreak"
+ Leer tabla(parquet)
+ Quitar acentos
+ Quitar saltos de línea
+ Quitar acentos del nombre de la columna
+ Guardar la tabla en la capa curated(parquet)
+ Repetir para todas las tablas
+
+ "transformation_detalle_cliente"
+ Leer tabla detalle_cliente(parquet)
+ Separ texto en la columna direccion por comas
+ Separ texto de estado y código postal por espacios en blanco
+ Crear columna estado, codigo_postal y direccion
+ Conservar las columnas a utilizar
+ Guardar la tabla en la capa curated(parquet)
+
+ "transformation_detalle_sucursal"
+ Leer tabla detalle_sucursal(parquet)
+ Separ texto en la columna sucural por "-"
+ Crear columna estado
+ Conservar las columnas a utilizar
+ Guardar la tabla en la capa curated(parquet)
