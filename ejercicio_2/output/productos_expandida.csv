@@ -1,0 +1,11 @@
+sku,marca,modelo,year,escala,escala_min,escala_max,categoria_id,categoria,stock
+i480i2,Ford,S10 Regular Cab,1997,1 - 25,1,25,p-63G,"Coupe, Sedan",3289
+i480i2,Ford,S10 Regular Cab,1997,26 - 50,26,50,p-63G,"Coupe, Sedan",3289
+i480i2,Ford,S10 Regular Cab,1997,51 - 75,51,75,p-63G,"Coupe, Sedan",3289
+J278M7,Ford,Sierra 3500 HD Extended Cab,2013,1 - 25,1,25,p-63G,"Coupe, Sedan",3984
+J278M7,Ford,Sierra 3500 HD Extended Cab,2013,26 - 50,26,50,p-63G,"Coupe, Sedan",3984
+J278M7,Ford,Sierra 3500 HD Extended Cab,2013,51 - 75,51,75,p-63G,"Coupe, Sedan",3984
+t914W6,Mercury,TSX,2020,1 - 25,1,25,p-63G,"Coupe, Sedan",9208
+t914W6,Mercury,TSX,2020,26 - 50,26,50,p-63G,"Coupe, Sedan",9208
+t914W6,Mercury,TSX,2020,51 - 75,51,75,p-63G,"Coupe, Sedan",9208
+b649U4,Chrysler,4Runner,2010,1 - 25,1,25,p-63G,"Coupe, Sedan",2748

@@ -1,0 +1,46 @@
+Zophia Data Academy
+Fundamentos de ingeniería de datos
+
+Ecommerce Ejercicio 2
+
+Crear tabla productos_expandida con las siguientes columnas
+
+ |-- sku: string
+ |-- marca: string
+ |-- modelo: string
+ |-- year: int
+ |-- escala: string
+ |-- escala_min: int
+ |-- escala_max: int
+ |-- categoria_id: string
+ |-- categoria: string
+ |-- stock: int
+
+Ejemplo de las tablas de salida en:
+ output/productos_expandida.csv
+
+Descripción
+ Se quiere desnormalizar las tablas relacionadas a la información de los
+ productos para tener toda la información recopilada en una única tabla
+ y evitar hacer Joins a la hora de realizar una consulta completa de un
+ producto, por lo que se quiere generar una tabla de productos expandida.
+ 
+Archivos fuente
+ productos.parquet
+ detalle_productos.parquet
+ detalle_categoria.parquet
+  
+Procedimiento
+ "transformation_productos_expandida"
+ Leer tabla productos(parquet)
+ Separ texto en la columna escala por comas
+ Crear columna escala_min y escala_max
+ Cambiar el tipo de dato
+ Conservar las columnas a utilizar
+ Leer tabla detalle_productos(parquet)
+ Cambiar el tipo de dato
+ Conservar las columnas a utilizar
+ Leer tabla detalle_categoria(parquet)
+ Cruce de tablas
+ Conservar las columnas a utilizar
+ Guardar la tabla en la capa curated(parquet)
