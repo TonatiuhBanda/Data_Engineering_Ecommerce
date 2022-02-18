@@ -8,13 +8,13 @@ Crear tabla productos_expandida con las siguientes columnas
  |-- sku: string
  |-- marca: string
  |-- modelo: string
- |-- year: int
+ |-- year: integer
  |-- escala: string
- |-- escala_min: int
- |-- escala_max: int
+ |-- escala_min: integer
+ |-- escala_max: integer
  |-- categoria_id: string
  |-- categoria: string
- |-- stock: int
+ |-- stock: integer
 
 Ejemplo de las tablas de salida en:
  output/productos_expandida.csv
@@ -37,10 +37,14 @@ Procedimiento
  Crear columna escala_min y escala_max
  Cambiar el tipo de dato
  Conservar las columnas a utilizar
+ 
  Leer tabla detalle_productos(parquet)
  Cambiar el tipo de dato
  Conservar las columnas a utilizar
+ 
  Leer tabla detalle_categoria(parquet)
+ 
  Cruce de tablas
  Conservar las columnas a utilizar
+ 
  Guardar la tabla en la capa curated(parquet)
