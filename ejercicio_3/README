@@ -1,0 +1,84 @@
+Zophia Data Academy
+Fundamentos de ingeniería de datos
+
+Ecommerce Ejercicio 3
+
+Crear tabla ordenes_expandida con las siguientes columnas
+
+ |-- orden_id: string
+ |-- sucursal_id: string
+ |-- cliente_id: string
+ |-- sku: string
+ |-- cantidad: integer
+ |-- precio: float
+ |-- fecha_orden: string
+ |-- fecha_envio: string
+ |-- fecha_entrega: string
+ |-- sucursal: string
+ |-- sucursal_direccion: string
+ |-- sucursal_estado: string
+ |-- sucursal_telefono: string
+ |-- cliente: string
+ |-- cliente_direccion: string
+ |-- cliente_estado: string
+ |-- cliente_cp: string
+ |-- email: string
+ |-- cliente_telefono: string
+ |-- metodo_pago: string
+ |-- numero_tarjeta: string
+ |-- nombre: string
+ |-- escala: string
+ |-- escala_min: integer
+ |-- escala_max: integer
+ |-- precio_escala: float
+ |-- categoria_id: string
+ |-- stock: integer
+ |-- marca: string
+ |-- modelo: string
+ |-- year: integer
+ |-- categoria: string
+ 
+Ejemplo de las tablas de salida en:
+ output/ordenes_expandida.csv
+
+Descripción
+ El gerente de ventas tarda mucho tiempo relacionando los datos de la tabla
+ de ordenes y las demás tablas, por lo que solicitó que se hiciera una tabla
+ maestra en donde se pudieran observar todos los datos relacionados con una
+ misma orden.
+
+Archivos fuente
+ detalle_categoria.parquet
+ detalle_cliente_direccion.parquet
+ detalle_productos.parquet
+ detalle_sucursal_estado.parquet
+ ordenes.parquet
+ productos.parquet
+  
+Procedimiento
+ "transformation_ordenes_expandida"
+ Leer tabla ordenes(parquet)
+ Cambiar el tipo de dato
+ 
+ Leer tabla detalle_sucursal(parquet)
+ Renombrar columnas
+ 
+ Leer tabla detalle_cliente(parquet)
+ Renombrar columnas
+ 
+ Leer tabla productos(parquet)
+ Cambiar el tipo de dato
+ Separ texto en la columna escala por comas
+ Crear columna escala_min y escala_max
+ Cambiar el tipo de dato
+ Conservar las columnas a utilizar
+ 
+ Leer tabla detalle_productos(parquet)
+ Cambiar el tipo de dato
+ 
+ Leer tabla detalle_categoria(parquet)
+ 
+ Cruce de tablas
+ Conservar las columnas a utilizar
+ 
+ Guardar la tabla en la capa curated(parquet)
