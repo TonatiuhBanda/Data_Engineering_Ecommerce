@@ -1,0 +1,36 @@
+Zophia Data Academy
+Fundamentos de ingeniería de datos
+
+Ecommerce Ejercicio 4
+
+Crear tabla ordenes_resumen con las siguientes columnas
+
+ |-- orden_id: string
+ |-- numero_productos: integer
+ |-- total_venta: double
+ |-- fecha_orden: string
+ 
+Ejemplo de las tablas de salida en:
+ output/ordenes_resumen.csv
+
+Descripción
+ Por otro lado, la contadora de la compañía dice que le sería
+ más eficiente si los datos de una misma orden se encontrarán
+ más resumidos en una única línea ya que, en algunas órdenes se
+ realiza la compra de más de un tipo de producto y debe realizar
+ la suma del total de cada tipo de producto que se compró en esa
+ orden para obtener la venta total de toda la orden.
+
+Archivos fuente
+ ordenes.parquet
+  
+Procedimiento
+ "transformation_ordenes_resumida"
+ Leer tabla ordenes(parquet)
+ Cambiar el tipo de dato
+ Agrupar por orden_id y fecha_orden
+ Contar sku
+ Sumar precio
+ Cambiar el tipo de dato
+ Conservar las columnas a utilizar
+ Guardar la tabla en la capa curated(parquet)
