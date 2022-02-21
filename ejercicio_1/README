@@ -63,7 +63,7 @@ Archivos fuente
 Procedimiento
  "source_to_stage"
  Tomar cada archivo fuente(csv) y enviarlo a la capa stage(parquet)
- Para el archivo hecos.csv, quitar los espacios en blanco en el nombre
+ Para el archivo hechos.csv, quitar los espacios en blanco en el nombre
  de la columna categoria y enviarlo a la capa stage(parquet)
  
  "transformation_accents_linebreak"
